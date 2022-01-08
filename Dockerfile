@@ -113,6 +113,9 @@ RUN make modules
 ##########################
 FROM nginx:${NGINX_VERSION}-alpine
 LABEL MAINTAINER Maxime Epain <me@maxep.me>
+LABEL description "Nginx docker image with VoD module "
+LABEL org.opencontainers.image.source https://github.com/LYL-Radio/nginx-vod-docker
+
 ENV PATH=/opt/ffmpeg/bin:$PATH
 
 RUN apk add --no-cache \
