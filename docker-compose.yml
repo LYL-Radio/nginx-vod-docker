@@ -1,0 +1,13 @@
+version: "3.7"
+
+services:
+
+  vod:
+  build: .
+  container_name: vod
+  restart: unless-stopped
+  volumes:
+    - ./examples/vod-local-nginx.conf:/etc/nginx/nginx.conf
+    - ./audio/:/opt/static/audio/
+  ports:
+    - 8080:80
